@@ -2,9 +2,10 @@
 {% load i18n %}
 
 {% block content %}
-<h1>{% trans "Category list" %}</h1>
 
-<ul class="list-group">
+
+<ul class="list-group panel panel-default">
+  <h1>{% trans "Category list" %}</h1>
   {% for object in object_list %}
   <li class="list-group-item">
     <a href="{{ object.get_absolute_url }}"
