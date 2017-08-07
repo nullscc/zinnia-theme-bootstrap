@@ -1,7 +1,7 @@
 {% load comments i18n zinnia %}
 <article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %} article-content">
   {% block entry-header %}
-  <header class="entry-header page-header">
+  <header class="entry-header">
     <h2 class="entry-title">
     {% block entry-title %}
       <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
