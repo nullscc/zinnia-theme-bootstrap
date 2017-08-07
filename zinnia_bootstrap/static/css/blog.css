@@ -78,3 +78,12 @@ p.entry-discussions {
 .pager-entry-prev-next {
     margin: 5px 0 0;
 }
+
+.tag-item {
+    margin: 5px 0;
+    display:inline-block;
+}
+
+.tag-item a {
+    color: #eee;
+}
