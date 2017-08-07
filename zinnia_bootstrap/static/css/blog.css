@@ -1,12 +1,8 @@
 
-.main-container{
-    margin: 0 450px;
-}
-
 body {
     word-break: break-all;
     word-wrap: break-word;
-    padding-top: 70px;
+
     background:
     radial-gradient(black 15%, transparent 16%) 0 0,
     radial-gradient(black 15%, transparent 16%) 8px 8px,
@@ -62,7 +58,6 @@ p.entry-discussions {
 #commentform{
     background-color: #fff;
     padding: 16px; 
-    margin-bottom: 80px;
 }
 
 .montharchives, .entriesbycategories {
