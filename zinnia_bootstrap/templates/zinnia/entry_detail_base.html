@@ -57,6 +57,7 @@
 {% endblock entry-widgets %}
 
 {% block entry-pingbacks %}
+{% comment %}
 {% if object.pingback_count %}
 <section id="pingbacks" class="panel panel-info">
   <div class="panel-heading">
@@ -99,9 +100,11 @@
 <p>{% trans "Pingbacks are closed." %}</p>
 {% endif %}
 {% endblock pingbacks-status %}
+{% endcomment %}
 {% endblock entry-pingbacks %}
 
 {% block entry-trackbacks %}
+{% comment %}
 {% if object.trackback_count %}
 <section id="trackbacks" class="panel panel-info">
   <div class="panel-heading">
@@ -145,6 +148,7 @@
 </p>
 {% endif %}
 {% endblock trackbacks-status %}
+{% endcomment %}
 {% endblock entry-trackbacks %}
 
 {% block entry-comments %}
