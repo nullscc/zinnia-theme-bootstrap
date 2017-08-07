@@ -72,6 +72,11 @@ p.entry-discussions {
 
 #header-footer{
     padding: 10px 0;
+    
+}
+
+.entry-header {
+    border-bottom: 1px solid #eee;
 }
 
 .pager-entry-prev-next {
