@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load mptt_tags %}
+<div id=menu>
+<ul>
+  {% recursetree categories %}
+  <li{% if node.is_leaf_node %} id='end'{% endif %}>{% if not node.is_leaf_node %}<em></em>{% endif %}<a href="{{ node.get_absolute_url }}" title="{% blocktrans with category=node %}Show all entries in {{ category }}{% endblocktrans %}">{{ node }}</a>
+  {% blocktrans count entry_count=node.entries_published.count %}{{ entry_count }} entry{% plural %}{{ entry_count }} entries{% endblocktrans %}
+    {% if not node.is_leaf_node %}
+      <ul>
+          {{ children }}
+      </ul>
+    {% endif %}
+  </li>
+  {% endrecursetree %}
+
+  {% if not categories %}
+  <li>
+    {% trans "No categories yet." %}
+  </li>
+  {% endif %}
+</ul> 
+<div>
+
+<script type="text/javascript"> 
+(function(e){
+ for(var _obj=document.getElementById(e.id).getElementsByTagName(e.tag),i=-1,em;em=_obj[++i];){
+  em.onclick = function(){ //onmouseover
+   var ul = this.nextSibling;
+   if(!ul){return false;}
+   ul = ul.nextSibling; if(!ul){return false;} 
+   if(e.tag != 'a'){ ul = ul.nextSibling; if(!ul){return false;} } //a 标签控制 隐藏或删除该行
+   for(var _li=this.parentNode.parentNode.childNodes,n=-1,li;li=_li[++n];){
+    if(li.tagName=="LI"){
+     for(var _ul=li.childNodes,t=-1,$ul;$ul=_ul[++t];){
+      switch($ul.tagName){
+      case "UL":
+       $ul.className = $ul!=ul?"" : ul.className?"":"off";
+      break;
+      case "EM":
+       $ul.className = $ul!=this?"" : this.className?"":"off";
+      break;
+      }
+     }
+    }
+   }
+  }
+ }
+})({id:'menu',tag:'em'});
+</script>
