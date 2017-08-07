@@ -58,6 +58,7 @@ p.entry-discussions {
 #commentform{
     background-color: #fff;
     padding: 16px; 
+    margin-bottom: 80px;
 }
 
 .montharchives, .entriesbycategories {
