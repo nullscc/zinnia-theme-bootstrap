@@ -1,3 +1,8 @@
+
+.main-container{
+    margin: 0 450px;
+}
+
 body {
     word-break: break-all;
     word-wrap: break-word;
@@ -66,3 +71,10 @@ p.entry-discussions {
     margin-bottom: 16px;
 }
 
+#header-footer{
+    padding: 10px 0;
+}
+
+.pager-entry-prev-next {
+    margin: 5px 0 0;
+}

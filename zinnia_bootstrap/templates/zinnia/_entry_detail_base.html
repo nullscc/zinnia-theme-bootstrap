@@ -10,32 +10,35 @@
     {% endblock entry-title %}
     {% block entry-info %}
       <br />
+      <div id=header-footer>
       <small class="entry-info">
         {% block entry-authors %}
         {% endblock entry-authors %}
         {% block entry-published %}
-        <time class="published" datetime="{{ object.publication_date|date:"c" }}" pubdate="pubdate">{{ object.publication_date|date:"DATE_FORMAT" }}</time>
+        <time class="published pull-right" datetime="{{ object.publication_date|date:"c" }}" pubdate="pubdate">{{ object.publication_date|date:"DATE_FORMAT" }}</time>
         {% endblock entry-published %}
+        <div class="pull-left">
         {% block entry-categories %}
         {% with categories=object.categories.all %}
         {% if categories|length %}
-        {% trans "in" %}
+        <strong>{% trans "分类于" %}</strong>:
         {% for category in categories %}
         <a href="{{ category.get_absolute_url }}"
            title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
-           rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}.
+           rel="tag category">{{ category }}</a>{% if not forloop.last %} | {% endif %}{% endfor %}{% endif %}
         {% endwith %}
         {% endblock entry-categories %}
 
-      <span class="glyphicon glyphicon-tags"></span> <strong>{% trans "Tags" %}</strong> :
+      <strong>&nbsp;&nbsp;{% trans "Tags" %}</strong>:
       {% for tag in object.tags_list %}
       <a href="{% url 'zinnia:tag_detail' tag %}"
          title="{% blocktrans %}Show all entries tagged by {{ tag }}{% endblocktrans %}"
-         rel="tag">{{ tag }}</a>
+         rel="tag">{{ tag }}</a>{% if not forloop.last %} | {% endif %}
       {% empty %}
-      <span>{% trans "No tags" %}</span>
+      <span>&nbsp;&nbsp;{% trans "No tags" %}</span>
       {% endfor %}
 
+      <strong>&nbsp;&nbsp;{% trans "Comment" %}</strong>:
       {% with comment_count=object.comment_count %}
       {% if comment_count %}
       <a href="{{ object.get_absolute_url }}#comments"
@@ -54,8 +57,9 @@
       {% endif %}
       {% endif %}
       {% endwith %}
-
+      </div>
       </small>
+    </div>
     {% endblock entry-info %}
     </h2>
     {% block entry-last-update %}
@@ -106,7 +110,7 @@
 {% if not object_content.has_more %}
   {% block entry-previous-next-entries %}
   <div class="entry-prev-next">
-    <ul class="pager">
+    <ul class="pager pager-entry-prev-next">
       {% with next_entry=object.next_entry %}
       {% if next_entry %}
       <li class="next">
