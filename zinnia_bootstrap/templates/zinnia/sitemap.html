@@ -2,9 +2,9 @@
 {% load i18n zinnia mptt_tags %}
 
 {% block content %}
-<h1>{% trans "Sitemap" %}</h1>
 
 <div class="entriesbycategories">
+  <h1>{% trans "Sitemap" %}</h1>
   <h2>{% trans "Entries per categories" %}</h2>
   {% for category in categories %}
   <h3>{{ category }}</h3>
