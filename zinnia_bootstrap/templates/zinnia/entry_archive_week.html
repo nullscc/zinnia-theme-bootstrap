@@ -14,6 +14,7 @@
 {% endblock content-title %}
 
 {% block content-related %}
+<div class="content-related">
 {% if date_list %}
 <h2>{% trans "Daily archives" %}</h2>
 <ul>
@@ -49,4 +50,5 @@
     <a href="{% url 'zinnia:entry_archive_month' week|date:"Y" week|date:"m" %}" rel="archives">{{ week|date:"YEAR_MONTH_FORMAT" }}</a>
   </li>
 <ul>
+  </div>
 {% endblock content-related %}
