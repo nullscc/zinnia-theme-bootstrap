@@ -57,9 +57,8 @@
 
 {% block content %}
 
-{% block content-title %}
-
 <div class="title-div">
+{% block content-title %}
 {% if category %}
 <h1>{% blocktrans %}Category archives: {{ category }}{% endblocktrans %}</h1>
 {% if category.description %}
@@ -90,8 +89,8 @@
   </a>
 </p>
 {% endif %}
-</div>
 {% endblock content-title %}
+</div>
 
 {% block content-loop %}
 {% for object in object_list %}
@@ -110,9 +109,10 @@
 {% endif %}
 {% endblock content-pagination %}
 
+<div class="content-related">
 {% block content-related %}
 {% endblock content-related %}
-
+</div>
 {% endblock content %}
 
 {% block admin-tools %}

@@ -87,6 +87,11 @@ p.entry-discussions {
     color: #eee;
 }
 
+.content-related {
+    background-color: #fff;
+    padding: 5px 10px;
+}
+
 #menu ul, #menu h3 {margin:0px; padding:0px;}
 #menu li {list-style-type:none;}
 #menu {
