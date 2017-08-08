@@ -3,8 +3,8 @@
 <div id=menu>
 <ul>
   {% recursetree categories %}
-  <li{% if node.is_leaf_node %} id='end'{% endif %}>{% if not node.is_leaf_node %}<em></em>{% endif %}<a href="{{ node.get_absolute_url }}" title="{% blocktrans with category=node %}Show all entries in {{ category }}{% endblocktrans %}">{{ node }}</a>
-  ({% blocktrans count entry_count=node.entries_published.count %}{{ entry_count }}{% plural %}{{ entry_count }}{% endblocktrans %})
+  <li{% if node.is_leaf_node %} id='end'{% endif %}>{% if not node.is_leaf_node %}<em></em>{% endif %}<a href="{{ node.get_absolute_url }}" title="{% blocktrans with category=node %}Show all entries in {{ category }}{% endblocktrans %}">{{ node }}<span class="badge" style="padding:0 3px; background-color:#02F78E;">{% blocktrans count entry_count=node.entries_published.count %}{{ entry_count }}{% plural %}{{ entry_count }}{% endblocktrans %}</span></a>
+  
     {% if not node.is_leaf_node %}
       <ul>
           {{ children }}

@@ -95,7 +95,7 @@ p.entry-discussions {
  }
 #menu a{text-decoration:none;border:none;}
 #menu a:hover{text-decoration:none;}
- #menu ul li {
+#menu ul li {
   padding:5px 0 2px 15px; 
    background:url("tree-ul-li.gif") no-repeat 5px -32px;  
  }
