@@ -8,10 +8,11 @@
         {{ object.title|widont }}
       </a>
     {% endblock entry-title %}
+    </h2>
     {% block entry-info %}
-      <br />
-      <div id=header-footer>
-      <small class="entry-info">
+      
+      <div id="header-footer">
+      <h6><small class="entry-info clearfix">
         {% block entry-authors %}
         {% endblock entry-authors %}
         {% block entry-published %}
@@ -58,10 +59,11 @@
       {% endif %}
       {% endwith %}
       </div>
-      </small>
+      </small></h6>
+
     </div>
     {% endblock entry-info %}
-    </h2>
+    
     {% block entry-last-update %}
     <p class="entry-last-update" style="display: none;">
       {% trans "Last update on" %} <time class="updated" datetime="{{ object.last_update|date:"c" }}">{{ object.last_update|date:"DATE_FORMAT" }}</time>.
@@ -69,7 +71,7 @@
     {% endblock entry-last-update %}
   </header>
   {% endblock entry-header %}
-
+  <br />
   {% block entry-body %}
   <div class="entry-body">
     {% block entry-image %}
