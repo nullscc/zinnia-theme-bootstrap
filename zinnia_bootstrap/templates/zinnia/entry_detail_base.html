@@ -2,14 +2,26 @@
 {% load i18n zinnia %}
 
 
+{% if toc %}
+{% block sidebar %}
+
+<aside id="widget-toc" class="widget panel panel-default">
+  <div class="panel-heading">
+    {% trans "TOC" %}
+  </div>
+  {{ toc|safe }}
+</aside>
+{{ block.super }}
+{% endblock sidebar %}
+{% endif %}
+
+
 {% block content %}
 
 {% block entry-content %}
-  {% include object.content_template with object_content=object.html_content %}
+  {% include object.content_template with object_content=html_content %}
 
 {% endblock entry-content %}
-
-
 
 {% block entry-widgets %}
 <aside class="entry-widgets" role="complementary">
