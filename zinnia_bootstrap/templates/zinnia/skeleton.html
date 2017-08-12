@@ -46,10 +46,14 @@
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
-              {% url 'zinnia:category_list' as category_list_url %}
               <li >
                 <a href="{% url 'zinnia:entry_archive_index' %}" title="home">
                   {% trans "主页" %}
+                </a>
+              </li>
+              <li >
+                <a href="blog.nulls.cc" title="old">
+                  {% trans "旧版博客" %}
                 </a>
               </li>
               <li>
