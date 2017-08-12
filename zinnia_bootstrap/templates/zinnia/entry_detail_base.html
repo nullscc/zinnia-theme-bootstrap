@@ -2,18 +2,19 @@
 {% load i18n zinnia %}
 
 
-{% if toc %}
-{% block sidebar %}
 
+{% block sidebar %}
+{% if toc %}
 <aside id="widget-toc" class="widget panel panel-default">
   <div class="panel-heading">
-    {% trans "TOC" %}
+    {% trans "文章目录" %}
   </div>
   {{ toc|safe }}
 </aside>
 {{ block.super }}
-{% endblock sidebar %}
 {% endif %}
+{% endblock sidebar %}
+
 
 
 {% block content %}
