@@ -5,6 +5,20 @@ body {
     font-size : 1.5em;
 }
 
+.blog-title a{
+    color: #ddd;
+    text-decoration : none;
+}
+
+.blog-title a:hover{
+    color: white;
+}
+
+.blog-description {
+    font-size: 1em;
+    color: #999;
+}
+
 .zinnia
 {
     background-color:black;
@@ -147,3 +161,4 @@ p.entry-discussions {
      margin: 0;
      font-size: 10px;
  }
+
