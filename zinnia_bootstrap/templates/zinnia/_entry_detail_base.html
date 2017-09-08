@@ -4,7 +4,7 @@
   <header class="entry-header">
     <h2 class="entry-title">
     {% block entry-title %}
-      <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
+      <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark" style="color:#333">
         {{ object.title|widont }}
       </a>
     {% endblock entry-title %}
@@ -108,7 +108,7 @@
     <p class="continue-reading">
       <a href="{{ object.get_absolute_url }}"
          title="{% blocktrans with object=object.title percent=object_content.remaining_percent|floatformat:0 %}{{ percent }}% of {{ object }} still remains to read.{% endblocktrans %}"
-         rel="bookmark" class="btn btn-primary">
+         rel="bookmark" class="btn btn-danger">
         {% trans "Continue reading" %}
       </a>
     </p>

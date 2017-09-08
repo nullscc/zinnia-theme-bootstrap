@@ -3,6 +3,7 @@
 
 {% block sidebar %}
 <aside id="widget-search" class="widget panel panel-default">
+    {% comment %}
   <li class="list-group-item">
   <div class="input-group">
   <form method="get" action="{% url 'zinnia:entry_search' %}">
@@ -24,6 +25,8 @@
   </form>
   </div>
   </li>
+  {% endcomment %}
+
   {% url 'zinnia:sitemap' as sitemap_url %}
 
   <li class="list-group-item">
